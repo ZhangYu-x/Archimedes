@@ -1,0 +1,423 @@
+//todo 请确保 underlyingAddress, lpTokenAddress 是保留大小写的
+
+// todo 请确保 SpellAddress 小写
+exports.SpellAddressToDEX = {
+    "heco-mainnet": {
+        // todo 纪录历史Spell
+        "0xe928961cc71d58bc1ccebc9502f64ca18604dbb3":"Mdex",
+        "0x":"BXH",
+    }
+}
+
+exports.allFarmPools = {
+    "heco-mainnet": [
+        {
+            // HBTC-USDT
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa','0xa71EdC38d189767582C38A3145b5873052c3e47a'],
+            poolAddress: '0xFBe7b74623e4be82279027a286fa3A5b5280F77c',
+            maxLeverage: 3,
+        },
+        {
+            // ETH-USDT
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x64FF637fB478863B7468bc97D30a5bF3A428a1fD','0xa71EdC38d189767582C38A3145b5873052c3e47a'],
+            poolAddress: '0x78C90d3f8A64474982417cDB490E840c01E516D4',
+            maxLeverage: 3,
+        },
+        {
+            // HUSD-USDT
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047','0xa71EdC38d189767582C38A3145b5873052c3e47a'],
+            poolAddress: '0xdff86B408284dff30A7CAD7688fEdB465734501C',
+            maxLeverage: 8,
+        },
+        {
+            // HUSD-WHT
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047','0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F'],
+            poolAddress: '0x3375afF2CAcF683b8FC34807B9443EB32e7Afff6',
+            maxLeverage: 3,
+        },
+        {
+            // WHT-USDT
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F','0xa71EdC38d189767582C38A3145b5873052c3e47a'],
+            poolAddress: '0x499B6E03749B4bAF95F9E70EeD5355b138EA6C31',
+            maxLeverage: 3,
+        },
+        {
+            // WHT-ETH
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F','0x64FF637fB478863B7468bc97D30a5bF3A428a1fD'],
+            poolAddress: '0x53E458aD1CFEB9582736db6BdE9aF89948e3bc3d',
+            maxLeverage: 3,
+        },
+        {
+            // WHT-HBTC
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F','0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa'],
+            poolAddress: '0xBFff969A85e355eE0851b019Dba1e87C7780F40d',
+            maxLeverage: 3,
+        },
+        {
+            // ETH-HBTC
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x64FF637fB478863B7468bc97D30a5bF3A428a1fD','0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa'],
+            poolAddress: '0x793c2a814e23EE38aB46412Be65E94Fe47D4B397',
+            maxLeverage: 3,
+        },
+
+        {
+            // MDX-WHT
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c','0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F'],
+            poolAddress: '0x6Dd2993B50b365c707718b0807fC4e344c072eC2',
+            maxLeverage: 2.5,
+        },
+        {
+            // MDX-USDT
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c','0xa71EdC38d189767582C38A3145b5873052c3e47a'],
+            poolAddress: '0x615E6285c5944540fd8bd921c9c8c56739Fd1E13',
+            maxLeverage: 2.5,
+        },
+        {
+            // MDX-HBTC
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c','0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa'],
+            poolAddress: '0x2Fb4bE0F2785bD6009A383f3290CC97A4e3bD46B',
+            maxLeverage: 2.5,
+        },
+        {
+            // MDX-ETH
+            poolType: 'Liquidity Providing',
+            poolDEX: 'Mdex',
+            rewardToken: 'MDX',
+            poolTokens: ['0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c','0x64FF637fB478863B7468bc97D30a5bF3A428a1fD'],
+            poolAddress: '0xb55569893b397324c0d048c9709F40c23445540E',
+            maxLeverage: 2.5,
+        },
+
+    ],
+};
+
+exports.allMarketsArray = {
+    // output: aTokenAddress: []
+    "heco-mainnet": [
+        "0x6602F0Ee865A8729dCCc71Df69168dCb1F60AbcA", //aWHT
+        "0xcBA0289c400b9c3ADFBcbF77998CD8d85Fa52047", //aHUSD
+        "0x342B5965479A465CAAD6375D3463994521035130", //aUSDTHECO
+        "0x01b9C25869FF720c767fC79c0881774373e1a83A", //aHBTC
+        "0x3F11a8E18848d8e6A64214C79B95a4ED0c0975C0", //aETH
+        "0x8aE9F541807ffc113068E9f8E57806d6917c4150", //aMDX
+    ]
+};
+
+exports.mdexLpTokenArray = {
+    // output: aTokenAddress: []
+    "heco-mainnet": [
+        // "0x765c8054197f37c3b1E88eEe72c3bB643cf0eB5F", //aMLP-HUSD-USDT
+    ]
+};
+
+// input: aTokenAddress
+exports.mdexLpTokenPoolId = {
+    "heco-mainnet": {
+        // "0x765c8054197f37c3b1E88eEe72c3bB643cf0eB5F":"10", //aMLP-HUSD-USDT
+    }
+};
+
+// TODO 这两个要重构
+// input: underlyingAddress
+exports.mdexLpTokenPoolIdUnderlying = {
+    "heco-mainnet": {
+        "0xFBe7b74623e4be82279027a286fa3A5b5280F77c":"8", //MLP-HBTC-USDT
+        "0x78C90d3f8A64474982417cDB490E840c01E516D4":"9", //MLP-ETH-USDT
+        "0xdff86B408284dff30A7CAD7688fEdB465734501C":"10", //MLP-HUSD-USDT
+        "0x3375afF2CAcF683b8FC34807B9443EB32e7Afff6":"15", //MLP-HUSD-WHT
+        "0x499B6E03749B4bAF95F9E70EeD5355b138EA6C31":"17", //MLP-WHT-USDT
+        "0x53E458aD1CFEB9582736db6BdE9aF89948e3bc3d":"30", //MLP-WHT-ETH
+        "0xBFff969A85e355eE0851b019Dba1e87C7780F40d":"29", //MLP-WHT-HBTC
+        "0x793c2a814e23EE38aB46412Be65E94Fe47D4B397":"31", //MLP-ETH-HBTC
+        "0x6Dd2993B50b365c707718b0807fC4e344c072eC2":"19", //MLP-MDX-WHT
+        "0x615E6285c5944540fd8bd921c9c8c56739Fd1E13":"16", //MLP-MDX-USDT
+        "0x2Fb4bE0F2785bD6009A383f3290CC97A4e3bD46B":"32", //MLP-MDX-HBTC
+        "0xb55569893b397324c0d048c9709F40c23445540E":"33", //MLP-MDX-ETH
+    }
+};
+// output: underlyingAddress
+exports.mdexLpTokenUnderlyingByPoolId = {
+    "heco-mainnet": {
+        "8":"0xFBe7b74623e4be82279027a286fa3A5b5280F77c", //MLP-HBTC-USDT
+        "9":"0x78C90d3f8A64474982417cDB490E840c01E516D4", //MLP-ETH-USDT
+        "10":"0xdff86B408284dff30A7CAD7688fEdB465734501C", //MLP-HUSD-USDT
+        "15":"0x3375afF2CAcF683b8FC34807B9443EB32e7Afff6", //MLP-HUSD-WHT
+        "17":"0x499B6E03749B4bAF95F9E70EeD5355b138EA6C31", //MLP-WHT-USDT
+        "30":"0x53E458aD1CFEB9582736db6BdE9aF89948e3bc3d", //MLP-WHT-ETH
+        "29":"0xBFff969A85e355eE0851b019Dba1e87C7780F40d", //MLP-WHT-HBTC
+        "31":"0x793c2a814e23EE38aB46412Be65E94Fe47D4B397", //MLP-ETH-HBTC
+        "19":"0x6Dd2993B50b365c707718b0807fC4e344c072eC2", //MLP-MDX-WHT
+        "16":"0x615E6285c5944540fd8bd921c9c8c56739Fd1E13", //MLP-MDX-USDT
+        "32":"0x2Fb4bE0F2785bD6009A383f3290CC97A4e3bD46B", //MLP-MDX-HBTC
+        "33":"0xb55569893b397324c0d048c9709F40c23445540E", //MLP-MDX-ETH
+    }
+};
+
+// output: underlyingAddress
+exports.poolIdToLpAddress = {
+    "heco-mainnet": {
+        "Mdex": {
+            "8":"0xFBe7b74623e4be82279027a286fa3A5b5280F77c", //MLP-HBTC-USDT
+            "9":"0x78C90d3f8A64474982417cDB490E840c01E516D4", //MLP-ETH-USDT
+            "10":"0xdff86B408284dff30A7CAD7688fEdB465734501C", //MLP-HUSD-USDT
+            "15":"0x3375afF2CAcF683b8FC34807B9443EB32e7Afff6", //MLP-HUSD-WHT
+            "17":"0x499B6E03749B4bAF95F9E70EeD5355b138EA6C31", //MLP-WHT-USDT
+            "30":"0x53E458aD1CFEB9582736db6BdE9aF89948e3bc3d", //MLP-WHT-ETH
+            "29":"0xBFff969A85e355eE0851b019Dba1e87C7780F40d", //MLP-WHT-HBTC
+            "31":"0x793c2a814e23EE38aB46412Be65E94Fe47D4B397", //MLP-ETH-HBTC
+            "19":"0x6Dd2993B50b365c707718b0807fC4e344c072eC2", //MLP-MDX-WHT
+            "16":"0x615E6285c5944540fd8bd921c9c8c56739Fd1E13", //MLP-MDX-USDT
+            "32":"0x2Fb4bE0F2785bD6009A383f3290CC97A4e3bD46B", //MLP-MDX-HBTC
+            "33":"0xb55569893b397324c0d048c9709F40c23445540E", //MLP-MDX-ETH
+        },
+        "BXH": {
+            "9":"0xBDbEA6a45E2B59032e0570d9a95c71a2Ac1fb1c6", //BLP-ETH-HBTC
+            "1":"0x3f62B3408F4847AEd0730557f3248A85f1484CbD", //BLP-HUSD-HBTC
+            "2":"0x233870d3303A9994e272F53A0747D668325c68bb", //BLP-HUSD-ETH
+            "4":"0xA55ba169CdFC8856DD498a2E50924B2A6baf2e4F", //BLP-WHT-HBTC
+            "3":"0x0fc2C813FA36dCC6b26DDdD11fF2449572a9bC3B", //BLP-HUSD-WHT
+            "5":"0xe488af5D9920ff815Bf16F36449E60DdE6007e48", //BLP-WHT-ETH
+            "10":"0xBE1a31b5A880629B94E9C7c966b2b66191364B9f", //BLP-WHT-USDT
+            "0":"0xA1c7db0ED51D367e948021F95784594509f5B272", //BLP-HUSD-USDT
+        },
+    }
+};
+
+// input: underlyingAddress
+exports.lpAddressToPoolId = {
+    "heco-mainnet": {
+        "Mdex": {
+            "0xFBe7b74623e4be82279027a286fa3A5b5280F77c":"8", //MLP-HBTC-USDT
+            "0x78C90d3f8A64474982417cDB490E840c01E516D4":"9", //MLP-ETH-USDT
+            "0xdff86B408284dff30A7CAD7688fEdB465734501C":"10", //MLP-HUSD-USDT
+            "0x3375afF2CAcF683b8FC34807B9443EB32e7Afff6":"15", //MLP-HUSD-WHT
+            "0x499B6E03749B4bAF95F9E70EeD5355b138EA6C31":"17", //MLP-WHT-USDT
+            "0x53E458aD1CFEB9582736db6BdE9aF89948e3bc3d":"30", //MLP-WHT-ETH
+            "0xBFff969A85e355eE0851b019Dba1e87C7780F40d":"29", //MLP-WHT-HBTC
+            "0x793c2a814e23EE38aB46412Be65E94Fe47D4B397":"31", //MLP-ETH-HBTC
+            "0x6Dd2993B50b365c707718b0807fC4e344c072eC2":"19", //MLP-MDX-WHT
+            "0x615E6285c5944540fd8bd921c9c8c56739Fd1E13":"16", //MLP-MDX-USDT
+            "0x2Fb4bE0F2785bD6009A383f3290CC97A4e3bD46B":"32", //MLP-MDX-HBTC
+            "0xb55569893b397324c0d048c9709F40c23445540E":"33", //MLP-MDX-ETH
+        },
+        "BXH": {
+            "0xBDbEA6a45E2B59032e0570d9a95c71a2Ac1fb1c6":"9", //BLP-ETH-HBTC
+            "0x3f62B3408F4847AEd0730557f3248A85f1484CbD":"1", //BLP-HUSD-HBTC
+            "0x233870d3303A9994e272F53A0747D668325c68bb":"2", //BLP-HUSD-ETH
+            "0xA55ba169CdFC8856DD498a2E50924B2A6baf2e4F":"4", //BLP-WHT-HBTC
+            "0x0fc2C813FA36dCC6b26DDdD11fF2449572a9bC3B":"3", //BLP-HUSD-WHT
+            "0xe488af5D9920ff815Bf16F36449E60DdE6007e48":"5", //BLP-WHT-ETH
+            "0xBE1a31b5A880629B94E9C7c966b2b66191364B9f":"10", //BLP-WHT-USDT
+            "0xA1c7db0ED51D367e948021F95784594509f5B272":"0", //BLP-HUSD-USDT
+        },
+    }
+};
+
+// input: underlyingAddress
+exports.tokenSymbol = {
+    "heco-mainnet": {
+        "0xETH": 'HT',
+        "0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F": 'WHT',
+        "0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047": 'HUSD',
+        "0xa71EdC38d189767582C38A3145b5873052c3e47a": 'USDT',
+        "0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa": 'HBTC',
+        "0x64FF637fB478863B7468bc97D30a5bF3A428a1fD": 'ETH',
+        "0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c": 'MDX',
+        "0xA2c49cEe16a5E5bDEFDe931107dc1fae9f7773E3": 'HDOT',
+
+        "0xE499Ef4616993730CEd0f31FA2703B92B50bB536": 'HPT',
+        "0xFBe7b74623e4be82279027a286fa3A5b5280F77c": 'HBTC-USDT',
+        "0x78C90d3f8A64474982417cDB490E840c01E516D4": 'ETH-USDT',
+        "0xdff86B408284dff30A7CAD7688fEdB465734501C": 'HUSD-USDT',
+        "0x3375afF2CAcF683b8FC34807B9443EB32e7Afff6": 'HUSD-WHT',
+        "0x499B6E03749B4bAF95F9E70EeD5355b138EA6C31": 'WHT-USDT',
+        "0x53E458aD1CFEB9582736db6BdE9aF89948e3bc3d": 'WHT-ETH',
+        "0xBFff969A85e355eE0851b019Dba1e87C7780F40d": 'WHT-HBTC',
+        "0x793c2a814e23EE38aB46412Be65E94Fe47D4B397": 'ETH-HBTC',
+        "0x6Dd2993B50b365c707718b0807fC4e344c072eC2": 'MDX-WHT',
+        "0x615E6285c5944540fd8bd921c9c8c56739Fd1E13": 'MDX-USDT',
+        "0x2Fb4bE0F2785bD6009A383f3290CC97A4e3bD46B": 'MDX-HBTC',
+        "0xb55569893b397324c0d048c9709F40c23445540E": 'MDX-ETH',
+    }
+};
+
+// input: underlyingAddress
+exports.tokenName = {
+    "heco-mainnet": {
+        "0xETH": 'Huobi Token',
+        "0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F": 'Wrapped HT',
+        "0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047": 'Heco HUSD',
+        "0xa71EdC38d189767582C38A3145b5873052c3e47a": 'Heco USDT',
+        "0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa": 'Heco HBTC',
+        "0x64FF637fB478863B7468bc97D30a5bF3A428a1fD": 'Heco ETH',
+        "0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c": 'MDX',
+        "0xA2c49cEe16a5E5bDEFDe931107dc1fae9f7773E3": 'Heco HDOT',
+
+        "0xE499Ef4616993730CEd0f31FA2703B92B50bB536": 'Heco HPT',
+        "0xFBe7b74623e4be82279027a286fa3A5b5280F77c": 'HBTC-USDT for MDEX',
+        "0x78C90d3f8A64474982417cDB490E840c01E516D4": 'ETH-USDT for MDEX',
+        "0xdff86B408284dff30A7CAD7688fEdB465734501C": 'HUSD-USDT for MDEX',
+        "0x3375afF2CAcF683b8FC34807B9443EB32e7Afff6": 'HUSD-WHT for MDEX',
+        "0x499B6E03749B4bAF95F9E70EeD5355b138EA6C31": 'WHT-USDT for MDEX',
+        "0x53E458aD1CFEB9582736db6BdE9aF89948e3bc3d": 'WHT-ETH for MDEX',
+        "0xBFff969A85e355eE0851b019Dba1e87C7780F40d": 'WHT-HBTC for MDEX',
+        "0x793c2a814e23EE38aB46412Be65E94Fe47D4B397": 'ETH-HBTC for MDEX',
+        "0x6Dd2993B50b365c707718b0807fC4e344c072eC2": 'MDX-WHT for MDEX',
+        "0x615E6285c5944540fd8bd921c9c8c56739Fd1E13": 'MDX-USDT for MDEX',
+        "0x2Fb4bE0F2785bD6009A383f3290CC97A4e3bD46B": 'MDX-HBTC for MDEX',
+        "0xb55569893b397324c0d048c9709F40c23445540E": 'MDX-ETH for MDEX',
+    }
+};
+
+// input: underlyingAddress
+exports.decimals = {
+    "heco-mainnet": {
+        "0xETH": 18,
+        "0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F": 18,
+        "0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047": 8,
+        "0xa71EdC38d189767582C38A3145b5873052c3e47a": 18,
+        "0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa": 18,
+        "0x64FF637fB478863B7468bc97D30a5bF3A428a1fD": 18,
+        "0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c": 18,
+        "0xA2c49cEe16a5E5bDEFDe931107dc1fae9f7773E3": 18,
+
+        "0xE499Ef4616993730CEd0f31FA2703B92B50bB536": 18,
+        "0xFBe7b74623e4be82279027a286fa3A5b5280F77c": 18,
+        "0x78C90d3f8A64474982417cDB490E840c01E516D4": 18,
+        "0xdff86B408284dff30A7CAD7688fEdB465734501C": 18,
+        "0x3375afF2CAcF683b8FC34807B9443EB32e7Afff6": 18,
+        "0x499B6E03749B4bAF95F9E70EeD5355b138EA6C31": 18,
+        "0x53E458aD1CFEB9582736db6BdE9aF89948e3bc3d": 18,
+        "0xBFff969A85e355eE0851b019Dba1e87C7780F40d": 18,
+        "0x793c2a814e23EE38aB46412Be65E94Fe47D4B397": 18,
+        "0x6Dd2993B50b365c707718b0807fC4e344c072eC2": 18,
+        "0x615E6285c5944540fd8bd921c9c8c56739Fd1E13": 18,
+        "0x2Fb4bE0F2785bD6009A383f3290CC97A4e3bD46B": 18,
+        "0xb55569893b397324c0d048c9709F40c23445540E": 18,
+    }
+};
+
+exports.cTokenAddress = {
+    "heco-mainnet": {
+        '0xETH': "0x397c6D1723360CC1c317CdC9B2E926Ae29626Ff3",
+        '0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047': "0x8ef46DdA4deE4cEE24fa49c2C9c98147AE927996",
+        '0x64FF637fB478863B7468bc97D30a5bF3A428a1fD': "0x01371C08E2AE6F78D42c9796FA20DDb245Df3885",
+        '0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa': "0x8feFb583e077de36F68444a14E68172b01e27dD7",
+        '0xe499ef4616993730ced0f31fa2703b92b50bb536': "0x3465BCF382A41cf90FF4eadC593a053f71062f91",
+        '0xa71edc38d189767582c38a3145b5873052c3e47a': "0x3dA74C09ccb8faBa3153b7f6189dDA9d7F28156A",
+        '0xecb56cf772B5c9A6907FB7d32387Da2fCbfB63b4': "0xC90cd094A5Abbd77C5FF14f374f103024D435022",
+        '0xeF3CEBD77E0C52cb6f60875d9306397B5Caca375': "0x2482aE8baA55d36033c1900dA5979a85c527684c",
+        '0xB6F4c418514dd4680F76d5caa3bB42dB4A893aCb': "0x0BE09466b6381dd0aBe83F92f580A7f70D6443aC",
+        '0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c': "0x9A0d6C2fc560F796c3889DE89f0a9C6fA1aa41b2",
+        '0xae3a768f9aB104c69A7CD6041fE16fFa235d1810': "0xF0D21c5c5Da662307195ac667d53f2aA28e7755F",
+        '0x9e004545c59D359F6B7BFB06a26390b087717b42': "0xAfe9fA588121Cd370E6c3FCa6c3D83Ca5AD438D8",
+        '0xB4F019bEAc758AbBEe2F906033AAa2f0F6Dacb35': "0xd11eEbE1eEAC6933fdc5b7124A3153030153Cd4c",
+        '0x22C54cE8321A4015740eE1109D9cBc25815C46E6': "0x3bBA2f019F48FcEa617a990154e2D1B7bebc1f7b",
+
+        '0xFBe7b74623e4be82279027a286fa3A5b5280F77c': "0x785F1c1ea937184B259e263f0De2c49Aa4992c28",
+        '0x78C90d3f8A64474982417cDB490E840c01E516D4': "0x02f1b86AD51Dee2cf105Fa5813e59e2d962D28b5",
+        '0xdff86B408284dff30A7CAD7688fEdB465734501C': "0x158BDA50E4D2021Eb5E338Beaa61306c5225cCFb",
+        '0x793c2a814e23ee38ab46412be65e94fe47d4b397': "0x8ef46DdA4deE4cEE24fa49c2C9c98147AE927996",
+        '0x3375afF2CAcF683b8FC34807B9443EB32e7Afff6': "0x58F7192Be3EdF2294Bb161Ab090c4e1029444Bd7",
+        '0x499B6E03749B4bAF95F9E70EeD5355b138EA6C31': "0xE57D8787Fb4CD2aE9396a25897d645b45cC72c4E",
+    }
+};
+
+// input: aTokenAddress
+exports.underlyingAddress = {
+    "heco-mainnet": {
+        "0x6602F0Ee865A8729dCCc71Df69168dCb1F60AbcA": '0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F',
+        "0xcBA0289c400b9c3ADFBcbF77998CD8d85Fa52047": '0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047',
+        "0x342B5965479A465CAAD6375D3463994521035130": '0xa71EdC38d189767582C38A3145b5873052c3e47a',
+        "0x01b9C25869FF720c767fC79c0881774373e1a83A": '0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa',
+        "0x3F11a8E18848d8e6A64214C79B95a4ED0c0975C0": '0x64FF637fB478863B7468bc97D30a5bF3A428a1fD',
+        "0x8aE9F541807ffc113068E9f8E57806d6917c4150": '0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c',
+    }
+};
+
+// input: underlyingAddress
+exports.aTokenAddress = {
+    "heco-mainnet": {
+        "0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F": "0x6602F0Ee865A8729dCCc71Df69168dCb1F60AbcA",
+        '0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047': "0xcBA0289c400b9c3ADFBcbF77998CD8d85Fa52047",
+        "0xa71EdC38d189767582C38A3145b5873052c3e47a": "0x342B5965479A465CAAD6375D3463994521035130",
+        "0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa": "0x01b9C25869FF720c767fC79c0881774373e1a83A",
+        "0x64FF637fB478863B7468bc97D30a5bF3A428a1fD": "0x3F11a8E18848d8e6A64214C79B95a4ED0c0975C0",
+        "0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c": "0x8aE9F541807ffc113068E9f8E57806d6917c4150",
+    }
+};
+
+// input: aTokenAddress
+//todo
+exports.collateralFactor = {
+    "heco-mainnet": {
+        "0x6602F0Ee865A8729dCCc71Df69168dCb1F60AbcA": '0.80',
+        "0xcBA0289c400b9c3ADFBcbF77998CD8d85Fa52047": '0.80',
+        "0x342B5965479A465CAAD6375D3463994521035130": '0.80',
+        "0x01b9C25869FF720c767fC79c0881774373e1a83A": '0.80',
+        "0x3F11a8E18848d8e6A64214C79B95a4ED0c0975C0": '0.80',
+        "0x8aE9F541807ffc113068E9f8E57806d6917c4150": '0.30',
+    }
+};
+
+// input: underlyingAddress(LP)
+exports.priceFactorColl = {
+    "heco-mainnet": {
+        '0xFBe7b74623e4be82279027a286fa3A5b5280F77c': '0.92',// MLP-HBTC-USDT
+        '0x78C90d3f8A64474982417cDB490E840c01E516D4': '0.92',// MLP-ETH-USDT
+        '0xdff86B408284dff30A7CAD7688fEdB465734501C': '0.95',// MLP-HUSD-USDT
+        '0x3375afF2CAcF683b8FC34807B9443EB32e7Afff6': '0.92',// MLP-HUSD-WHT
+        '0x499B6E03749B4bAF95F9E70EeD5355b138EA6C31': '0.92',// MLP-WHT-USDT
+        '0x53E458aD1CFEB9582736db6BdE9aF89948e3bc3d': '0.90',// MLP-WHT-ETH
+        '0xBFff969A85e355eE0851b019Dba1e87C7780F40d': '0.90',// MLP-WHT-HBTC
+        '0x793c2a814e23EE38aB46412Be65E94Fe47D4B397': '0.90',// MLP-ETH-HBTC
+        '0x6Dd2993B50b365c707718b0807fC4e344c072eC2': '0.80',// MLP-MDX-WHT
+        '0x615E6285c5944540fd8bd921c9c8c56739Fd1E13': '0.85',// MLP-MDX-USDT
+        '0x2Fb4bE0F2785bD6009A383f3290CC97A4e3bD46B': '0.80',// MLP-MDX-HBTC
+        '0xb55569893b397324c0d048c9709F40c23445540E': '0.80',// MLP-MDX-ETH
+    }
+};
+// input: underlyingAddress
+exports.priceFactorBorr = {
+    "heco-mainnet": {
+        "0x5545153CCFcA01fbd7Dd11C0b23ba694D9509A6F": '1.15', // WHT
+        "0x0298c2b32eaE4da002a15f36fdf7615BEa3DA047": '1.03', // HUSD
+        "0xa71EdC38d189767582C38A3145b5873052c3e47a": '1.03', // USDTHECO
+        "0x66a79D23E58475D2738179Ca52cd0b41d73f0BEa": '1.15', // HBTC
+        "0x64FF637fB478863B7468bc97D30a5bF3A428a1fD": '1.15', // ETH
+        "0x25D2e80cB6B86881Fd7e07dd263Fb79f4AbE033c": '1.2', // MDX
+    }
+};
